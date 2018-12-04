@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LeaderBoardTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Scorer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TT-iI-XYv">
+                                <rect key="frame" x="16" y="12" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9n-1T-Klj">
+                                <rect key="frame" x="16" y="46" width="343" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BUN-3H-DCh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Syt-Ge-zEC">
+                                <rect key="frame" x="0.0" y="184" width="375" height="483"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qIZ-9Y-hAY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="97v-Vx-F9M"/>
+                                </connections>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CfZ-Vg-mmn">
+                                <rect key="frame" x="0.0" y="61" width="375" height="115"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="blA-Dm-nHW"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hUk-p7-e0L">
+                                    <size key="itemSize" width="166" height="112"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QTY-BC-HB8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Sbe-f2-pfR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="P9n-1T-Klj" firstAttribute="top" secondItem="0TT-iI-XYv" secondAttribute="bottom" constant="5" id="2X9-fc-P5r"/>
+                            <constraint firstItem="CfZ-Vg-mmn" firstAttribute="top" secondItem="P9n-1T-Klj" secondAttribute="bottom" constant="14" id="7ty-kJ-6xm"/>
+                            <constraint firstItem="CfZ-Vg-mmn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="C6F-pZ-nQw"/>
+                            <constraint firstItem="0TT-iI-XYv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TJU-Uc-h9Q"/>
+                            <constraint firstItem="CfZ-Vg-mmn" firstAttribute="trailing" secondItem="Syt-Ge-zEC" secondAttribute="trailing" id="Vh1-sh-nwf"/>
+                            <constraint firstItem="P9n-1T-Klj" firstAttribute="centerX" secondItem="CfZ-Vg-mmn" secondAttribute="centerX" id="XBu-5o-88S"/>
+                            <constraint firstItem="Syt-Ge-zEC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Z9S-Ek-YYK"/>
+                            <constraint firstItem="Syt-Ge-zEC" firstAttribute="top" secondItem="CfZ-Vg-mmn" secondAttribute="bottom" constant="8" symbolic="YES" id="dr4-iU-iuU"/>
+                            <constraint firstItem="0TT-iI-XYv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-8" id="ftO-yx-XMu"/>
+                            <constraint firstAttribute="trailing" secondItem="CfZ-Vg-mmn" secondAttribute="trailing" id="kcg-5H-Cnp"/>
+                            <constraint firstItem="0TT-iI-XYv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P9n-1T-Klj" secondAttribute="trailing" id="o4x-dF-1Jw"/>
+                            <constraint firstItem="CfZ-Vg-mmn" firstAttribute="leading" secondItem="Syt-Ge-zEC" secondAttribute="leading" id="trr-ne-nqA"/>
+                            <constraint firstItem="0TT-iI-XYv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P9n-1T-Klj" secondAttribute="leading" id="vKS-Ya-AzD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="CfZ-Vg-mmn" id="w3i-l7-hy5"/>
+                        <outlet property="tblView" destination="Syt-Ge-zEC" id="UIO-Cu-eCN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="86.806596701649184"/>
+        </scene>
+    </scenes>
+</document>
